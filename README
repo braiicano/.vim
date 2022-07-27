@@ -1,0 +1,20 @@
+Archivos necesarios a instalar y clonar
+
+"GIT"
+UBUNTU: sudo apt-get install git
+FREEBSD: pkg install git
+
+"Curl"
+UBUNTU: sudo apt-get install curl
+
+"ZSH"
+sudo apt install zsh
+
+CAMBIO DE SHELL: chsh -s $(which zsh) /reiniciar terminal
+
+"OMZ"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+"POWERLEVEL10K"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+p10k configure /configura powerlevel10k
