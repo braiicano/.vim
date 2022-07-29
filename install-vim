@@ -1,15 +1,19 @@
 #!/bin/bash
 
+sudo apt update -y
+sudo apt upgrade -y
+
 echo "Instalando editor Neovim y plugins"
 sudo apt install vim -y
 sudo apt-get install neovim -y
 
-sudo mkdir ~/.config/nvim/coc-settings.json
-sudo VIMINIT=~/.vim/ | source $VIMINIT 
+mkdir ~/.config > /dev/null
+mkdir ~/.config/nvim/ > /dev/null
+VIMINIT=~/.vim/ | source $VIMINIT 
 echo "Se establecio VIMINIT en '$VIMINIT'"
 
 sudo echo "so ~/.vim/.vimrc">~/.vimrc
-sudo echo "set rtp^=~/.vim rtp+=~/.vim/after\nlet $packpath=$runtimepath\nso ~/.vim/.vimrc">~/.config/nvim/init.vim
+sudo echo "so ~/.vim/.vimrc">~/.config/nvim/init.vim
 
 echo "Instalando vim-plug en el sistema..."
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -17,16 +21,16 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 echo "Instalando plugins..."
-sudo apt install python3.10
+sudo apt install python
 pip install -U setuptools
 pip install 'python-language-server[all]'
-sudo cp ~/.vim/shell/coc-settings.json ~/.config/nvim/
+cp ~/.vim/shell/coc-settings.json ~/.config/nvim/
 
-
-sudo curl -sL install-node.vercel.app/lts | bash
+sudo apt install nodejs
+curl -sL install-node.vercel.app/lts | bash
 npm i -g sql-language-server
 
-nvim -c ":PlugInstall" -c ":CocInstall coc-server coc-sh coc-go coc-html coc-java coc-tsserver coc-json coc-pyright coc-jedi coc-vetur" -c "iPresiona :q! al finalizar toda la instalacion"
+nvim -c ":PlugInstall" -c ":CocInstall coc-sh coc-go coc-html coc-java coc-tsserver coc-json coc-pyright coc-jedi coc-vetur" | bash 
 
 echo "Instalación finalizada."
 

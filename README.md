@@ -1,6 +1,11 @@
 # .NeoVim updates
 
-Hi, NeoVim update and upgrade in various devices or terminal.
+This repo configure your Vim and Neovim editor with plugins, shorcuts and functions to help write your code.
+Next one you clone the repo, use the automatic install:
+
+	./.vim/install-vim
+
+Or copy this to install manually.
 
 	echo "so ~/.vim/.vimrc" >> ~/.vimrc
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -14,7 +19,12 @@ In first time use Plugins package to install and configure tools.
 
 Open NVIM and install with command:
 
-  	:PlugInstall
+		:PlugInstall
+		
+You need nodejs and python to execute successfully Neovim editor
+Install the Conquer of Complete, you can use for main page.
+
+		:CocInstall coc-sh coc-go coc-html coc-java coc-tsserver coc-json coc-pyright coc-jedi coc-vetur
 
 ## Actual keymaps configuration:
 The leaderkey is SPACE key.

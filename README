@@ -1,11 +1,10 @@
 Archivos necesarios a instalar y clonar
 
 "GIT"
-UBUNTU: sudo apt-get install git
-FREEBSD: pkg install git
+sudo apt-get install git
 
 "Curl"
-UBUNTU: sudo apt-get install curl
+sudo apt-get install curl
 
 "ZSH"
 sudo apt install zsh

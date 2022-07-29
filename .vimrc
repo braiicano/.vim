@@ -33,7 +33,7 @@ so ~/.vim/maps.vim
 so ~/.vim/vimplug.vim
 "so ~/.vim/vundleplug.vim
 so ~/.vim/config-plugs.vim
-so ~/.vim/plugged/coc-config.vim
+"so ~/.vim/plugged/coc-config.vim
 
 
 "Set theme for editor
@@ -61,3 +61,6 @@ let g:python3_host_prog = '/usr/bin/python3'
 let g:LanguageClient_serverCommands = {
     \ 'sql': ['sql-language-server', 'up', '--method', 'stdio'],
     \ }
+
+set rtp^=~/.vim rtp+=~/.vim/after 
+let $packpath=$runtimepath
